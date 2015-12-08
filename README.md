@@ -24,13 +24,6 @@ The example demonstrates the use of the `spring-xd-module-parent` pom to package
 The project's [pom][] declares `spring-xd-module-parent` as its parent. This adds the dependencies needed to compile and test 
 the module and also configures the [Spring Boot Maven Plugin][] to package the module as an uber-jar, packaging any dependencies that are not already provided by the Spring XD container. 
 
-## Building with Gradle
-
-	$./gradlew clean test bootRepackage
-
-The project's [build.gradle][] applies the `spring-xd-module` plugin, providing analagous build and packaging support for gradle. This plugin also applies the [Spring Boot Gradle Plugin][] as well as the [propdeps plugin][]. 
-
-
 In this case, `spring-xd-extension-script` is a module dependency that must be packaged with the module to be loaded by the module's class loader.
  This component has transitive dependencies to support Spring Integration Groovy scripts which are also exported to the uber-jar
 
